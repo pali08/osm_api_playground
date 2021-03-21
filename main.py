@@ -16,25 +16,28 @@ def get_map_with_check(*coordinates):
     except osmapi.OsmApi.ApiError as oai:
         return 0
 
-def split_into_bins(min, max, number_of_bins):
-    interval = (max - min) / number_of_bins
-    return [min + (interval * i) for i in range(0,number_of_bins+1)]
 
+def split_into_bins(min_coor, max_coor, number_of_bins):
+    interval_size = (max_coor - min_coor) / number_of_bins
+    interval_borders = [min_coor + (interval_size * i) for i in range(0, number_of_bins + 1)]
+    intervals = [[interval_borders[i], interval_borders[i + 1]] for i in range(0, len(interval_borders) - 1)]
+    return intervals
 
 
 def get_map(*coordinates):
+    osm_maps = [get_map_with_check(*coordinates)]
+    counter = 2
+    while 0 in osm_maps:
+        osm_maps = []
+        intervals_lon = split_into_bins(coordinates[0], coordinates[2], counter)
+        intervals_lat = split_into_bins(coordinates[1], coordinates[3], counter)
+        for i in range(0, counter):
+            osm_maps.append(get_map_with_check(intervals_lon[0], intervals_lat[0], intervals_lon[1], intervals_lat[1]))
+        counter += 1
+    return osm_maps
 
-    osm_map = 0
-    while osm_map == 0:
-        osm_map = get_map_with_check()
-    # test_map = basic_osm_api.Map(15.55103, 49.23309, 16.56716, 49.23932)
-    # print(test_map[0])
-    # for node in test_map:
-    #     try:
-    #         print(node['data']['tag']['name'])
-    #         print(node['type'])
-    #     except KeyError as ke:
-    #         pass
+def unify_maps(map_dicts):
+    pass
 
 
 # Press the green button in the gutter to run the script.
