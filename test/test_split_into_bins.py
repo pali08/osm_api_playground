@@ -30,6 +30,5 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(len(unify_maps(test_list_3)), 11)
 
 
-
 if __name__ == '__main__':
     unittest.main()

@@ -21,36 +21,36 @@ def split_into_bins(min_coor, max_coor, number_of_bins):
 
 
 def get_maps(*coordinates):
-    osm_maps = [get_map_with_check(*coordinates)]
-    # print(osm_maps[0])
-    if osm_maps != [0]:
-        print('Nodes count is ' + str(len([i for i in osm_maps[0] if i['type'] == 'node'])))
-        print(len(osm_maps[0]))
+    osm_maps_list = [get_map_with_check(*coordinates)]
+    # print(osm_maps_list[0])
+    if osm_maps_list != [0]:
+        print('Nodes count is ' + str(len([i for i in osm_maps_list[0] if i['type'] == 'node'])))
+        print(len(osm_maps_list[0]))
     counter = 2
-    while 0 in osm_maps:
-        # osm_maps = []
+    while 0 in osm_maps_list:
+        # osm_maps_list = []
         intervals_lon = split_into_bins(coordinates[0], coordinates[2], counter)
         # print(intervals_lon)
         intervals_lat = split_into_bins(coordinates[1], coordinates[3], counter)
-        osm_maps = [get_map_with_check(intervals_lon[i][0],
-                                       intervals_lat[j][0],
-                                       intervals_lon[i][1],
-                                       intervals_lat[j][1]) for i in range(0, counter) for j in range(0, counter)]
+        osm_maps_list = [get_map_with_check(intervals_lon[i][0],
+                                            intervals_lat[j][0],
+                                            intervals_lon[i][1],
+                                            intervals_lat[j][1]) for i in range(0, counter) for j in range(0, counter)]
         # print(intervals_lat)
         # for i in range(0, counter):
         #     for j in range(0, counter):
-        #         osm_maps.append(get_map_with_check(intervals_lon[i][0],
+        #         osm_maps_list.append(get_map_with_check(intervals_lon[i][0],
         #                                            intervals_lat[j][0],
         #                                            intervals_lon[i][1],
         #                                            intervals_lat[j][1]))
-        # print(osm_maps)
-        # print(osm_maps)
+        # print(osm_maps_list)
+        # print(osm_maps_list)
         counter += 1
     # try:
-    #     print(osm_maps == osm_maps_2)
+    #     print(osm_maps_list == osm_maps_2)
     # except UnboundLocalError:
     #     pass
-    return osm_maps
+    return osm_maps_list
 
 
 def unify_maps(all_map_dicts):
