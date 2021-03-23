@@ -17,8 +17,10 @@ class MyTestCase(unittest.TestCase):
         print(get_maps(16.6827, 49.4149, 16.6927, 49.4249))
         self.assertEqual(1, len(get_maps(16.6827, 49.4149, 16.6927, 49.4249)))
 
-    def test_get_maps_4_submaps(self):
-        self.assertTrue(len(get_maps(16.6227, 49.3749, 16.7027, 49.4349)) > 1)
+    def test_get_maps_multiple_submaps(self):
+        map_len = len(get_maps(16.6227, 49.3749, 16.7027, 49.4349))
+        print(map_len)
+        self.assertTrue(map_len > 1)
         # print(len(get_maps(16.6027, 49.3349, 16.7227, 49.4349)))
 
     def test_unify_maps(self):
