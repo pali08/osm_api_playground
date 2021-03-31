@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/qt_playground.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/staticmaps_playground.py">
           <value>
             <Attribute>
