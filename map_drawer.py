@@ -9,25 +9,31 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QDoubleValidator
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.onlyInt = QDoubleValidator()
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(680, 40, 113, 23))
+        self.lineEdit.setValidator(self.onlyInt)
+        self.lineEdit.setGeometry(QtCore.QRect(680, 10, 113, 23))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(680, 70, 113, 23))
+        self.lineEdit_2.setValidator(self.onlyInt)
+        self.lineEdit_2.setGeometry(QtCore.QRect(680, 40, 113, 23))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(680, 100, 113, 23))
+        self.lineEdit_3.setValidator(self.onlyInt)
+        self.lineEdit_3.setGeometry(QtCore.QRect(680, 70, 113, 23))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setGeometry(QtCore.QRect(680, 10, 113, 23))
+        self.lineEdit_4.setValidator(self.onlyInt)
+        self.lineEdit_4.setGeometry(QtCore.QRect(680, 100, 113, 23))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)

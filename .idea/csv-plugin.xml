@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="$USER_HOME$/.virtualenvs/osm_api_playground/lib/python3.8/site-packages/staticmaps/color.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/images_handling.py">
           <value>
             <Attribute>
@@ -45,7 +52,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/map_drawer.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/qt_playground.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/rectangle_area.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -60,6 +81,20 @@
           </value>
         </entry>
         <entry key="/test/test_split_into_bins.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/transparent_polygons.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/untitled.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
