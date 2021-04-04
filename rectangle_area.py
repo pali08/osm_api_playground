@@ -37,4 +37,3 @@ def get_image(*coords, png_or_svg='png'):
         write_svg(context)
 
 
-get_image(49.4750, 15.8611, 49.5005, 15.9178)

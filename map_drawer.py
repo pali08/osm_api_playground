@@ -9,30 +9,24 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QDoubleValidator
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        self.onlyInt = QDoubleValidator()
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setValidator(self.onlyInt)
         self.lineEdit.setGeometry(QtCore.QRect(680, 10, 113, 23))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setValidator(self.onlyInt)
         self.lineEdit_2.setGeometry(QtCore.QRect(680, 40, 113, 23))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setValidator(self.onlyInt)
         self.lineEdit_3.setGeometry(QtCore.QRect(680, 70, 113, 23))
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_4.setValidator(self.onlyInt)
         self.lineEdit_4.setGeometry(QtCore.QRect(680, 100, 113, 23))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -55,6 +49,9 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(710, 130, 80, 23))
         self.pushButton.setObjectName("pushButton")
+        self.graphicsViewMapCanvas = QtWidgets.QGraphicsView(self.centralwidget)
+        self.graphicsViewMapCanvas.setGeometry(QtCore.QRect(15, 11, 561, 541))
+        self.graphicsViewMapCanvas.setObjectName("graphicsViewMapCanvas")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 20))

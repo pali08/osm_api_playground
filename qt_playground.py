@@ -1,7 +1,9 @@
+from PyQt5.QtGui import QPixmap
+
 from map_drawer import Ui_MainWindow
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QMessageBox, QGraphicsPixmapItem, QGraphicsScene
 from PyQt5.QtCore import QFile, pyqtSlot
 
 # from ui_mainwindow import Ui_MainWindow
@@ -17,7 +19,14 @@ class MainWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self.on_click)
         self.show()
 
-    # @pyqtSlot()
+    def draw_image(self, image_path):
+        pix = QPixmap(image_path)
+        item = QGraphicsPixmapItem(pix)
+        scene = QGraphicsScene(self)
+        scene.addItem(item)
+        self.ui.graphicsViewMapCanvas.setScene(scene)
+
+    @pyqtSlot()
     def on_click(self):
         textbox_value_lon_left = float(self.ui.lineEdit.text())
         textbox_value_lon_right = float(self.ui.lineEdit_2.text())
@@ -28,6 +37,7 @@ class MainWindow(QMainWindow):
         print(textbox_value_lon_right)
         print(textbox_value_lon_left)
         get_image(textbox_value_lat_down, textbox_value_lon_left, textbox_value_lat_up, textbox_value_lon_right)
+        self.draw_image('rectangle_area_map.png')
         # get_image(49.4750, 15.8611, 49.5005, 15.9178)
         QMessageBox.question(self, 'File save', 'The file was saved',
                              QMessageBox.Ok,
